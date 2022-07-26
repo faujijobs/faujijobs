@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/faujijobs/static/css/main.67a1725e.css",
-    "main.js": "/faujijobs/static/js/main.c2a9a397.js",
-    "static/js/787.21cf3be4.chunk.js": "/faujijobs/static/js/787.21cf3be4.chunk.js",
-    "static/media/daniel-stuben--9ZbwBDOX9c-unsplash.jpg": "/faujijobs/static/media/daniel-stuben--9ZbwBDOX9c-unsplash.dee26e7fe1d94e3cb9bf.jpg",
-    "static/media/Soldier.jpg": "/faujijobs/static/media/Soldier.aab0a2104dccd2f6a324.jpg",
-    "static/media/About.jpg": "/faujijobs/static/media/About.59c50f8efd34cf528cd9.jpg",
-    "index.html": "/faujijobs/index.html",
-    "main.67a1725e.css.map": "/faujijobs/static/css/main.67a1725e.css.map",
-    "main.c2a9a397.js.map": "/faujijobs/static/js/main.c2a9a397.js.map",
-    "787.21cf3be4.chunk.js.map": "/faujijobs/static/js/787.21cf3be4.chunk.js.map"
+    "main.css": "/static/css/main.4cf784e2.css",
+    "main.js": "/static/js/main.90e4a31e.js",
+    "static/js/787.21cf3be4.chunk.js": "/static/js/787.21cf3be4.chunk.js",
+    "static/media/daniel-stuben--9ZbwBDOX9c-unsplash.jpg": "/static/media/daniel-stuben--9ZbwBDOX9c-unsplash.dee26e7fe1d94e3cb9bf.jpg",
+    "static/media/Soldier.jpg": "/static/media/Soldier.aab0a2104dccd2f6a324.jpg",
+    "static/media/About.jpg": "/static/media/About.59c50f8efd34cf528cd9.jpg",
+    "index.html": "/index.html",
+    "main.4cf784e2.css.map": "/static/css/main.4cf784e2.css.map",
+    "main.90e4a31e.js.map": "/static/js/main.90e4a31e.js.map",
+    "787.21cf3be4.chunk.js.map": "/static/js/787.21cf3be4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.67a1725e.css",
-    "static/js/main.c2a9a397.js"
+    "static/css/main.4cf784e2.css",
+    "static/js/main.90e4a31e.js"
   ]
 }

@@ -1,0 +1,18 @@
+$green : #54643a;
+$brown : #947a5c;
+$lightBrown: #b3a89e;
+$darkBrown: #6f6b62;
+$black: #202b27;
+
+.fauji-navbar {
+    background-color: #4B513D;
+    height: 80px;
+    box-shadow: #373E28 0px 6px 12px -2px, #373E28 0px 3px 7px -3px;
+    .nav-menu-item {
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        font-weight: 400;
+        padding: 0px 4px;
+    }
+}

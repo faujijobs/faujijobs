@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
+.fauji-loginpage {
+  background-color: #7F8A6C;
+  height: 100vh;
+  width: 100%;
+}
+
+.fauji-loginpage .loginpage-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.fauji-loginpage .loginpage-row .loginpage-section-a {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50%;
+}
+
+.fauji-loginpage .loginpage-row .loginpage-section-a .recruiter-section {
+  height: auto;
+  width: auto;
+  padding: 24px;
+  background-color: #4A5833;
+}
+
+.fauji-loginpage .loginpage-row .loginpage-section-a .recruiter-section .recruiter-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.fauji-loginpage .loginpage-row .loginpage-section-b {
+  height: 100%;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 7px;
+  margin: 10px 0px;
+}
+
+.form-submit {
+  width: 100%;
+  color: white;
+  background-color: #7F8A6C;
+  padding: 8px;
+  font-size: 18px;
+  margin: 12px 0px;
+  font-weight: bold;
+  border: 1px solid #7F8A6C;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.recruiter-heading {
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+}
+/*# sourceMappingURL=FaujiLogin.css.map */

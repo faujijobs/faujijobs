@@ -1,0 +1,15 @@
+.fauji-navbar {
+  background-color: #4B513D;
+  height: 80px;
+  -webkit-box-shadow: #373E28 0px 6px 12px -2px, #373E28 0px 3px 7px -3px;
+          box-shadow: #373E28 0px 6px 12px -2px, #373E28 0px 3px 7px -3px;
+}
+
+.fauji-navbar .nav-menu-item {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0px 4px;
+}
+/*# sourceMappingURL=FaujiNavbar.css.map */

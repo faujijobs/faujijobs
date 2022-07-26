@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap');
+
+$oswald : 'Oswald', sans-serif;
+
+.fauji-loginpage {
+    background-color: #7F8A6C;
+    height: 100vh;
+    width: 100%;
+
+    .loginpage-row {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        .loginpage-section-a {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 50%;
+
+            .recruiter-section {
+                height: auto;
+                width: auto;
+                padding: 24px;
+                background-color: #4A5833;
+
+                .recruiter-content {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+            }
+        }
+        .loginpage-section-b {
+            height: 100%;
+        }
+    }
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 7px;
+    margin: 10px 0px;
+}
+
+.form-submit {
+    width: 100%;
+    color: white;
+    background-color: #7F8A6C;
+    padding: 8px;
+    font-size: 18px;
+    margin: 12px 0px;
+    font-weight: bold;
+    border: 1px solid #7F8A6C;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.recruiter-heading {
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+}

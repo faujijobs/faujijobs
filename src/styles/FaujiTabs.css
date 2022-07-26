@@ -1,0 +1,15 @@
+.tab-panel .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tab-panel .tabs .tab {
+  font-size: 18px;
+  padding: 10px;
+  margin: 0px 70px 20px 0px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+/*# sourceMappingURL=FaujiTabs.css.map */

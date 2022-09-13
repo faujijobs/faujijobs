@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
 .fauji-landpage {
   background-color: #363D29;
-  background-image: url("../assets/icons/daniel-stuben--9ZbwBDOX9c-unsplash.jpg");
+  background-image: url("../assets/icons/try.jpg");
   overflow: hidden;
   background-size: cover;
   width: 100%;
@@ -11,21 +11,18 @@
 .landpage-wrap {
   background-color: black;
   height: 100vh;
-  padding: 90vh;
   opacity: 0.8;
   position: relative;
 }
 
 .landpage-row {
-  position: absolute;
   height: 100%;
   width: 100%;
-  top: 80px;
 }
 
 .landpage-row .landpage-style-hide .landpage-strip {
   background-color: #25281D;
-  height: 90%;
+  height: 100%;
   width: 150px;
   margin-left: 150px;
   opacity: 0.7;

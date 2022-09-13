@@ -1,38 +1,50 @@
 import React from 'react'
 import '../styles/notifications.css'
 import NotificationCard from '../components/NotificationCard'
-import { doc, getFirestore, setDoc } from 'firebase/firestore'
-import { CandidateLoginContext } from '../Providers/CandidateLoginProvider'
-
+import { JobContext } from '../Providers/JobsProvider'
+import 'bootstrap/dist/css/bootstrap.min.css';
 function Notifications() {
-    const [data, setData] = React.useState()
-    const { user } = React.useContext(CandidateLoginContext)
+
+    const { data, saveJob, getJobsData, deleteJob } = React.useContext(JobContext)
+    const [saved, setSaved] = React.useState([])
     React.useEffect(() => {
-        fetch('https://sheetdb.io/api/v1/xas830yyo4i3j').then(res => {
-            return res.json()
-        }).then(data => setData(data))
+        getJobsData().then((data) => setSaved(data))
     }, [])
 
-    console.log('Sheets Data', data)
-
-    async function saveJob(firmName, designation, salary, location, description) {
-        const db = getFirestore()
-        const usersRef = doc(db, 'savedJobs', user?.uid)
-        await setDoc(usersRef, { firmName: firmName, designation: designation, salary: salary, location: location, description: description },
-            { merge: true })
-        console.log('Job Saved', user.uid)
+    function handleSaved(jobId) {
+        const dummy = saved.find(item => item.id === jobId)
+        if (dummy) {
+            return true;
+        }
+        
+        return false;
     }
 
-    console.log(data)
-    return (
+    function isJobSaved(job) {
+        return handleSaved(`${job?.FirmName} + ${job?.Designation} + ${job?.Salary} + ${job?.Location} + ${job?.Description}`)
+    }
 
+    return (
         <>
             <div className='container' style={{ marginTop: '3rem' }}>
-                {data?.map(job => {
-                    return <NotificationCard firmName={job?.FirmName} designation={job?.Designation} salary={job?.Salary}
-                        location={job?.Location} description={job?.Description} saveJob={saveJob}
-                    />
-                })}
+                <div className='row'>
+                    {data?.map(job => {
+                        return <div className='col-lg-4'>
+                            <NotificationCard jobId={job?.jobId}
+                                firmName={job?.FirmName}
+                                designation={job?.Designation}
+                                salary={job?.Salary}
+                                location={job?.Location}
+                                description={job?.Description}
+                                saved={isJobSaved(job)}
+                                saveJob={saveJob}
+                                savedData={saved}
+                                data={data}
+                                deleteSavedJob={deleteJob}
+                            />
+                        </div>
+                    })}
+                </div>
             </div>
         </>
     )

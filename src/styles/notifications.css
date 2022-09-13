@@ -8,44 +8,37 @@
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.card .job-firm {
-  color: black;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.card .job-position {
-  color: black;
-  font-size: 20px;
-}
-
-.card .job-accessories {
+.card .card-header-sec {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: black;
-}
-
-.card .job-accessories .job-salary, .card .job-accessories .job-type, .card .job-accessories .job-location {
-  font-size: 14px;
-  margin: 8px 20px 8px 0px;
-}
-
-.card .job-accessories .job-salary span, .card .job-accessories .job-type span, .card .job-accessories .job-location span {
-  margin-right: 8px;
-  font-weight: bold;
-}
-
-.card .job-description {
-  color: black;
-}
-
-.card .job-save {
-  width: 100px;
-  padding: 5px 7px;
-  background-color: #7F8A6C;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: white;
   border: none;
-  border-radius: 5px;
-  color: white;
+}
+
+.card .card-heading {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.card .card-description {
+  font-size: 14px;
+  color: gray;
+}
+
+.card .card-designation, .card .card-location, .card .card-salary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 16px;
+}
+
+.card .card-designation .designation-icon, .card .card-designation .location-icon, .card .card-designation .salary-icon, .card .card-location .designation-icon, .card .card-location .location-icon, .card .card-location .salary-icon, .card .card-salary .designation-icon, .card .card-salary .location-icon, .card .card-salary .salary-icon {
+  padding-right: 12px;
+  padding-bottom: 6px;
 }
 /*# sourceMappingURL=notifications.css.map */

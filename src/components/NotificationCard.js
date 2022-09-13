@@ -1,21 +1,39 @@
 import React from 'react'
-import { BsWallet, BsBag } from 'react-icons/bs'
+import { BsWallet, BsBookmark, BsBookmarkFill } from 'react-icons/bs'
+import { TbBadge } from 'react-icons/tb'
 import { GoLocation } from 'react-icons/go'
+import '../styles/notifications.css'
 
 function NotificationCard(props) {
+    function saveOrDelete() {
+        if(!props?.saved) {
+            return props?.saveJob(props?.jobId, props?.firmName, props?.designation, props?.salary, props?.location, props?.description)
+        } else {
+            return props?.deleteSavedJob(`${props?.firmName} + ${props?.designation} + ${props?.salary} + ${props?.location} + ${props?.description}`)
+        }
+    }
     return (
-        <div className='card'>
-            <h5 className='job-firm'> {props?.firmName} </h5>
-            <h7 className='job-position'> {props?.designation} </h7>
-            <div className='job-accessories'>
-                <div className='job-salary'><span><BsWallet /></span> {props?.salary}/Month </div>
-                <div className='job-type'> <span> <BsBag />  </span> Part Time</div>
-                <div className='job-location'> <span> <GoLocation /> </span> {props?.location} </div>
+        <div className='card' style={{ width: '18rem' }} >
+            <div className='card-header-sec'>
+                <div className='card-image'> hello </div>
+                <div key={props?.jobId} className='save-job' onClick={saveOrDelete}>
+                    { props?.saved ? <BsBookmarkFill /> : <BsBookmark />}
+                </div>
             </div>
-            <p className='job-description'> {props?.description} </p>
-            <button className='job-save' onClick={() => props?.saveJob(props?.firmName, props?.designation,
-                props?.salary, props?.location, props?.description
-            )}  > Save Job </button>
+            <h5 className='card-heading'> {props?.designation}  </h5>
+            <p className='card-description'> {props?.description} </p> 
+            <div className='card-designation'>
+                <div className='designation-icon'> <TbBadge /> </div>
+                <div className='designation-content'> {props?.designation} </div>
+            </div>
+            <div className='card-location'>
+                <div className='location-icon'> <GoLocation /> </div>
+                <div className='location-content'> {props?.location} </div>
+            </div>
+            <div className='card-salary'>
+                <div className='salary-icon'> <BsWallet /> </div>
+                <div className='salary-content'> {props?.salary} / Month </div>
+            </div>
         </div>
     )
 }

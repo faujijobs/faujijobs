@@ -10,14 +10,15 @@ function CandidateLoginProvider(props) {
 
     const [registerdAs, setRegisteredAs] = React.useState("")
     const [user, setUser] = React.useState({})
+    const [position, setPosition] = React.useState('')
     const navigate = useNavigate();
-    console.log('run')
+    // console.log('run')
 
 
     React.useEffect(() => {
         registerdAs && navigate('/')
         onAuthStateChanged(auth, async (currrentUser) => {
-            console.log('State Changed')
+            // console.log('State Changed')
             setUser(currrentUser)
             
 
@@ -43,10 +44,12 @@ function CandidateLoginProvider(props) {
             console.log(user)
             user.user.displayName = username
 
+            console.log('Got registerd as', registerdUser)
+
             const db = getFirestore()
             const usersRef = doc(db, 'usersData', user.user.uid);
-            await setDoc(usersRef, { uid: user.user.uid, registeredAs: registerdUser }, { merge: true });
-
+            await setDoc(usersRef, { uid: user.user.uid, registeredAs: position }, { merge: true });
+ 
             if (registerdUser === 'Candidate') {
                 setRegisteredAs('Candidate')
             } else {
@@ -96,11 +99,17 @@ function CandidateLoginProvider(props) {
         navigate('/')
     }
 
+    function handleRegisteredAs(user) {
+        setPosition(user)
+    }
+
+    console.log('Position', position)
+
 
 
     return (
         <CandidateLoginContext.Provider value={{
-            register, login, registerdAs, user, logout
+            register, login, registerdAs, user, logout, handleRegisteredAs
         }}>
             {props.children}
         </CandidateLoginContext.Provider>

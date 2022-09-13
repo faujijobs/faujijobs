@@ -1,9 +1,8 @@
 import React from 'react'
 import './styles/FaujiLogin.css'
 import FaujiTabs from './utilities/FaujiTabs';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
-import { auth } from './firebase-config'
 import { CandidateLoginContext } from './Providers/CandidateLoginProvider';
+import ArmyIllustration from './assets/icons/armyIllustration.webp'
 // import {useNavigate} from 'react-router-dom'
 
 function FaujiLogin() {
@@ -15,109 +14,63 @@ function FaujiLogin() {
     const [registerPassword, setRegisterPassword] = React.useState("")
     const [loginEmail, setLoginEmail] = React.useState("")
     const [loginPassword, setLoginPassword] = React.useState("")
+    const [registeredAs, setRegisteredAs] = React.useState('')
 
-    const [company, setCompany] = React.useState("")
-    const [registerRecruiterEmail, setRegisterRecruiterEmail] = React.useState("")
-    const [registerRecruiterPassword, setRegisterRecruiterPassword] = React.useState("")
-    const [loginRecruiterEmail, setLoginRecruiterEmail] = React.useState("")
-    const [loginRecruiterPassword, setLoginRecruiterPassword] = React.useState("")
-    const { register, login } = React.useContext(CandidateLoginContext)
-
-
-
-    const [selectedIndex, setSelectedIndex] = React.useState(0)
-
-    return (
-        <>
-            <div className='fauji-loginpage'>
-                <div className='row loginpage-row'>
-                    <div className='col-lg-6 loginpage-section-a'>
-                        <h3 className='recruiter-heading'>Candidate</h3>
+    const { register, login, handleRegisteredAs } = React.useContext(CandidateLoginContext)
+     return (
+        <div style={{backgroundColor: '#7F8A6C', height: '90vh'}}>
+            <div className='container'>
+                <div className='row'>
+                    <div className='col-lg-6 login-background' style={{justifyContent: 'center', display:'flex', flexDirection: 'column'}}>
+                        <img src={ArmyIllustration} className='img-fluid img-reponsive' alt='Indian Army' />
+                        {/* <h1 className='slogan-heading'>INITIATIVE FOR OUR SOLDIERS</h1> */}
+                    </div>
+                    <div className='col-lg-6 login-section'>
                         <div className='recruiter-section'>
                             <FaujiTabs tab1={"Register"} tab2={"Login"} tabSelectedIndex={tabSelectedIndex} setTabSelectedIndex={setTabSelectedIndex}
                             />
+                            
                             <div className='recruiter-content'>
                                 {tabSelectedIndex === 0 ? <>
-                                    <input className='form-input'
-                                        placeholder={"Please enter your username"}
-                                        type="text"
-                                        onChange={(e) => setRegisterUsername(e.target.value)}
-                                    />
-                                    <input className='form-input'
-                                        placeholder={"Please enter your email Id"}
+                                    <input 
+                                        className='form-input'
+                                        placeholder={"Enter your email Id"}
                                         type="text"
                                         onChange={(e) => setRegisterEmail(e.target.value)}
                                     />
                                     <input
                                         className='form-input'
-                                        placeholder={"Please enter your password"}
+                                        placeholder={"Enter your password"}
                                         type="password"
                                         onChange={(e) => setRegisterPassword(e.target.value)}
                                     />
-                                    <button className='form-submit' onClick={() => register('Candidate', registerEmail, registerPassword, registerUsername)}> Register </button>
+                                    <input style={{marginRight: '6px' }} type='radio' onChange={() => handleRegisteredAs('Candidate')} name="position" value='candidate' />
+                                    <label style={{marginRight: '10px'}}>Candidate</label>
+                                    <input style={{marginRight: '6px'}} type='radio' onChange={() => handleRegisteredAs('Recruiter')} name="position" value='recruiter' />
+                                    <label style={{marginRight: '10px'}}>Recruiter</label>
+                                    <button className='form-submit' onClick={() => register(registeredAs, registerEmail, registerPassword, registerUsername)}> Register </button>
                                 </> : <>
                                     <input
                                         className='form-input'
                                         type={"text"}
-                                        placeholder={"Please enter your email Id"}
+                                        placeholder={"Enter your email Id"}
                                         onChange={(e) => setLoginEmail(e.target.value)}
                                     />
                                     <input
                                         className='form-input'
                                         type={"password"}
-                                        placeholder={"Please enter your password"}
+                                        placeholder={"Enter your password"}
                                         onChange={(e) => setLoginPassword(e.target.value)}
                                     />
-                                    <button className='form-submit' onClick={() => login('Candidate', loginEmail, loginPassword)}> Login </button>
-                                </>}
-                            </div>  
-                        </div>
-                    </div>
-                    <div className='col-lg-6 loginpage-section-a'>
-                        <h3 className='recruiter-heading'>Recruiter</h3>
-                        <div className='recruiter-section'>
-                            <FaujiTabs tab1={"Register"} tab2={"Login"} tabSelectedIndex={selectedIndex} setTabSelectedIndex={setSelectedIndex}
-                            />
-                            <div className='recruiter-content'>
-                                {selectedIndex === 0 ? <>
-                                    <input className='form-input'
-                                        placeholder={"Please enter your company name"}
-                                        type="text"
-                                        onChange={(e) => setCompany(e.target.value)}
-                                    />
-                                    <input className='form-input'
-                                        placeholder={"Please enter your email Id"}
-                                        type="text"
-                                        onChange={(e) => setRegisterRecruiterEmail(e.target.value)}
-                                    />
-                                    <input
-                                        className='form-input'
-                                        placeholder={"Please enter your password"}
-                                        type="password"
-                                        onChange={(e) => setRegisterRecruiterPassword(e.target.value)}
-                                    />
-                                    <button className='form-submit' onClick={() => register('Recruiter', registerRecruiterEmail, registerRecruiterPassword, company)}> Register </button>
-                                </> : <>
-                                    <input
-                                        className='form-input'
-                                        type={"text"}
-                                        placeholder={"Please enter your email Id"}
-                                        onChange={(e) => setLoginRecruiterEmail(e.target.value)}
-                                    />
-                                    <input
-                                        className='form-input'
-                                        type={"password"}
-                                        placeholder={"Please enter your password"}
-                                        onChange={(e) => setLoginRecruiterPassword(e.target.value)}
-                                    />
-                                    <button className='form-submit' onClick={() => login('Recruiter', loginRecruiterEmail, loginRecruiterPassword)}> Login </button>
+                                    <button className='form-submit' onClick={() => login(registeredAs, loginEmail, loginPassword)}> Login </button>
                                 </>}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </>
+
+        </div>
     )
 }
 

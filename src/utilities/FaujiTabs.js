@@ -3,12 +3,12 @@ import '../styles/FaujiTabs.css'
 
 function FaujiTabs(props) {
     const tabStyle0 = {
-        borderBottom: props.tabSelectedIndex === 0 && "2px solid white",
+        borderBottom: props.tabSelectedIndex === 0 && "2px solid #4A5833",
         
     }
 
     const tabStyle1 = {
-        borderBottom: props.tabSelectedIndex === 1 && "2px solid white" 
+        borderBottom: props.tabSelectedIndex === 1 && "2px solid #4A5833" 
     }
 
     return (

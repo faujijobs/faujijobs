@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
 .fauji-loginpage {
-  background-color: #7F8A6C;
-  height: 100vh;
+  background-color: white;
   width: 100%;
 }
 
@@ -34,7 +33,6 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 50%;
 }
 
 .fauji-loginpage .loginpage-row .loginpage-section-a .recruiter-section {
@@ -64,22 +62,45 @@
   height: 100%;
 }
 
-.form-input {
+input[type=text], input[type=password] {
   width: 100%;
   padding: 8px;
-  border-radius: 7px;
   margin: 10px 0px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid #4A5833;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid #4A5833;
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  -webkit-transition: background-color 600000s 0s, color 600000s 0s;
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[data-autocompleted] {
+  background-color: transparent !important;
 }
 
 .form-submit {
   width: 100%;
   color: white;
-  background-color: #7F8A6C;
+  background-color: black;
   padding: 8px;
   font-size: 18px;
   margin: 12px 0px;
   font-weight: bold;
-  border: 1px solid #7F8A6C;
+  border: 1px solid black;
+  border-radius: 5px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -87,5 +108,51 @@
 .recruiter-heading {
   margin-bottom: 5rem;
   text-transform: uppercase;
+}
+
+.login-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 20px;
+  margin-top: 10%;
+}
+
+.recruiter-content {
+  width: 100%;
+}
+
+input[type="radio"]:focus {
+  padding: 0px 10px;
+}
+
+::-webkit-input-placeholder {
+  color: black;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  color: black;
+  opacity: 1;
+  /* Firefox */
+}
+
+::-ms-input-placeholder {
+  color: black;
+  opacity: 1;
+  /* Firefox */
+}
+
+::placeholder {
+  color: black;
+  opacity: 1;
+  /* Firefox */
 }
 /*# sourceMappingURL=FaujiLogin.css.map */

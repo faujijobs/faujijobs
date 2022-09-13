@@ -7,9 +7,9 @@
 .tab-panel .tabs .tab {
   font-size: 18px;
   padding: 10px;
-  margin: 0px 70px 20px 0px;
+  margin: 0px 70px 50px 0px;
   cursor: pointer;
-  color: white;
+  color: black;
   font-weight: bold;
 }
 /*# sourceMappingURL=FaujiTabs.css.map */

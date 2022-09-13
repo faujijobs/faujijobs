@@ -12,7 +12,7 @@ function FaujiLandpage() {
   return (
     <>
       <div className='fauji-landpage'>
-        <div className='landpage-wrap' />
+        <div className='landpage-wrap' >
         <div className='row landpage-row'>
           <div className='col-lg-6 landpage-content'>
             <div className='landpage-subheading'>We believe what we do</div>
@@ -25,7 +25,7 @@ function FaujiLandpage() {
             </div>
           </div>
         </div>
-
+      </div>
       </div>
     </>
   )
